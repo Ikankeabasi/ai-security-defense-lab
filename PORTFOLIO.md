@@ -1,12 +1,12 @@
 # AI Defense Lab — Portfolio
 
-**Student:** [Your Full Name]
+**Student:** Ikankeabasi Okon Asuquo
 
-**GitHub:** [Your GitHub profile URL]
+**GitHub:** https://github.com/Ikankeabasi
 
-**Hugging Face Space:** [Your HF Space URL]
+**Hugging Face Space:** Not deployed yet
 
-**Completed:** [Date]
+**Completed:** Pending
 
 ---
 
@@ -16,13 +16,13 @@ Fill in each section as you complete a level. Link directly to your commit diff 
 
 ## Level 1 — MedVitals AI · Cloud Infrastructure Security
 
-**Problem:** [What was the vulnerability? What could an attacker do with it?]
+**Problem:** MedVitals AI exposed AWS credentials in its source code, and its IAM policy granted Administrator-level access through wildcard permissions. If an attacker obtained the credentials, they could access cloud resources, create privileged users, escalate permissions, and compromise sensitive patient data.
 
-**Method:** [How did you find it and what did you do to fix it?]
+**Method:** Investigated AWS CloudTrail logs using the 5Ws (Who, What, When, Where, and How) to identify Indicators of Compromise (IoCs). Removed hardcoded credentials by replacing them with environment variables, protected secrets using a .gitignore file, and replaced the wildcard IAM policy with a least-privilege policy that grants only the permissions required by the application.
 
-**Evidence:** [Link to your GitHub commit diff showing the patch]
+**Evidence:** https://github.com/AibinuolaDamilola/ai-security-defense-lab/commit/ac71117800dadb318df892b39b66ed0b4a9d93d6
 
-**Outcome:** [What changed as a result? What is more secure now and why does it matter to the business?]
+**Outcome:** The application no longer exposes sensitive credentials in source code, secrets are excluded from version control, and IAM permissions are restricted to only the required resources and actions. These changes reduce the attack surface and limit the impact of future credential compromise.
 
 **Skills:** CloudTrail Log Forensics · IAM Least Privilege · Secrets Management · Incident Timeline Reporting
 
