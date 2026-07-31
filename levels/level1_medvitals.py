@@ -168,8 +168,7 @@ def render_level1(user, supabase_client):
     st.caption("The following files were found in the MedVitals AI GitHub repository.")
     tab1, tab2 = st.tabs(["config.py", "deploy-role-policy.json"])
     with tab1:
-        st.code(
-           '# config.py\n# MedVitals AI — Production Environment Configuration\n# Maintained by: engineering-team@medvitals.ai\n# Last updated: 2026-05-14\n\n'
+        st.code(         
     '# config.py\n# MedVitals AI — Production Environment Configuration\n# Maintained by: engineering-team@medvitals.ai\n# Last updated: 2026-05-14\n\n'
     'import os\nfrom dotenv import load_dotenv\n\nload_dotenv()\n\n'
     'APP_ENV = "production"\nAPP_NAME = "medvitals-ai"\nAPP_PORT = 8080\nLOG_LEVEL = "INFO"\n\n'
