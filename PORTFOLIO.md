@@ -28,7 +28,9 @@ Fill in each section as you complete a level. Link directly to your commit diff 
 
 **Others:**
 - Technical write-up: https://github.com/Ikankeabasi/ai-security-defense-lab/blob/main/Incident-Timeline-Report-Level-1.md 
-- LinkedIn post: [Add your LinkedIn post link]
+
+- LinkedIn post: https://www.linkedin.com/posts/ikanke-asuquo-7825623b4_cybersecurity-aisecurity-cloudsecurity-share-7489077707708895232-zf4o/
+
 -  Additional documentation: https://github.com/AibinuolaDamilola/ai-security-defense-lab/commit/ac71117800dadb318df892b39b66ed0b4a9d93d6
 
 ---
