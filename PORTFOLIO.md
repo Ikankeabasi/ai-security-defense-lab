@@ -29,7 +29,7 @@ Fill in each section as you complete a level. Link directly to your commit diff 
 **Others:**
 - [Technical write-up link e.g. Medium blog post]
 - [LinkedIn post link]
-- [Any other documentation, video walkthrough, or public content]
+-  Additional documentation: https://github.com/Ikankeabasi/ai-security-defense-lab/blob/main/Incident-Timeline-Report-Level-1.md
 
 ---
 
