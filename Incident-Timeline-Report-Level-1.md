@@ -1,6 +1,6 @@
 # Incident Timeline Report — MedVitals AI Level 1
 
-**Author:** Ikankeabasi Okon Asuquo
+**Author:** Ikanke Okon Asuquo
 
 **Role:** AI Security Fellow (HerNetIQ Cohort 1)
 
