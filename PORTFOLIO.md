@@ -1,6 +1,6 @@
 # AI Defense Lab — Portfolio
 
-**Student:** Ikankeabasi Okon Asuquo
+**Student:** Ikanke Okon Asuquo
 
 **GitHub:** https://github.com/Ikankeabasi
 
