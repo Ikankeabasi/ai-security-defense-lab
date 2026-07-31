@@ -6,7 +6,7 @@
 
 **Hugging Face Space:** Not deployed yet
 
-**Completed:** Pending
+**Completed:** 31/07/2026
 
 ---
 
@@ -27,8 +27,8 @@ Fill in each section as you complete a level. Link directly to your commit diff 
 **Skills:** CloudTrail Log Forensics · IAM Least Privilege · Secrets Management · Incident Timeline Reporting
 
 **Others:**
-- [Technical write-up link e.g. Medium blog post]
-- [LinkedIn post link]
+- Technical write-up: https://github.com/AibinuolaDamilola/ai-security-defense-lab/commit/ac71117800dadb318df892b39b66ed0b4a9d93d6
+- LinkedIn post: [Add your LinkedIn post link]
 -  Additional documentation: https://github.com/Ikankeabasi/ai-security-defense-lab/blob/main/Incident-Timeline-Report-Level-1.md
 
 ---
