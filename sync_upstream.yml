@@ -1,42 +1,22 @@
-name: Sync Fork with Upstream
-
+name: Sync to Hugging Face Spaces
 on:
-  schedule:
-    # Runs every day at midnight UTC
-    - cron: "0 0 * * *"
-  workflow_dispatch:
-    # Allows manual trigger from the Actions tab in any fork
+  push:
+    branches: [main]
 
 jobs:
-  sync:
-    name: Sync fork with AibinuolaDamilola/ai-security-defense-lab
+  deploy:
     runs-on: ubuntu-latest
-
+    # Only runs from the original master repo — not from student forks
+    if: github.repository == 'AibinuolaDamilola/ai-security-defense-lab'
     steps:
-      - name: Checkout fork
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Set git identity
+          lfs: true
+      - name: Push to Hub
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          git config --global user.email "sync-bot@ai-defense-lab.dev"
-          git config --global user.name "AI Defense Lab Sync"
-
-      - name: Add upstream remote
-        run: |
-          git remote add upstream https://github.com/AibinuolaDamilola/ai-security-defense-lab.git || true
-          git fetch upstream
-
-      - name: Merge upstream into fork
-        run: |
-          # Merge upstream/main into the fork's main branch
-          # --no-edit accepts the merge commit message automatically
-          # If a file has conflicts (student edited it AND master changed it),
-          # git skips that file and keeps the student's version untouched.
-          git merge upstream/main --no-edit --strategy-option=ours || echo "Conflicts detected on some files — student edits preserved."
-
-      - name: Push synced changes to fork
-        run: |
-          git push origin main
+          git config --global user.email "fellowship@cyberdefense.com"
+          git config --global user.name "AibinuolaDamilola"
+          git push --force https://user:$HF_TOKEN@huggingface.co/spaces/cyberdammy/ai-security-defense-lab main
