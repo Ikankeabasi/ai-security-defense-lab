@@ -228,6 +228,7 @@ def render_level2(user, supabase_client):
         '<tr style="border-bottom:1px solid #F1F5F9;"><td style="padding:10px 14px; color:#374151; font-weight:500;">Serialisation Format</td><td style="padding:10px 14px; color:#6B7280;"></td></tr>'
         '<tr style="border-bottom:1px solid #F1F5F9;"><td style="padding:10px 14px; color:#374151; font-weight:500;">Threats Detected</td><td style="padding:10px 14px; color:#6B7280;"></td></tr>'
         '<tr style="border-bottom:1px solid #F1F5F9;"><td style="padding:10px 14px; color:#374151; font-weight:500;">Threat Type</td><td style="padding:10px 14px; color:#6B7280;"></td></tr>'
+        '<tr style="border-bottom:1px solid #F1F5F9;"><td style="padding:10px 14px; color:#374151; font-weight:500;">Threat Classification</td><td style="padding:10px 14px; color:#6B7280;"></td></tr>'
         '<tr style="border-bottom:1px solid #F1F5F9;"><td style="padding:10px 14px; color:#374151; font-weight:500;">Supply Chain Risk Factors</td><td style="padding:10px 14px; color:#6B7280;"></td></tr>'
         '<tr style="border-bottom:1px solid #F1F5F9;"><td style="padding:10px 14px; color:#374151; font-weight:500;">Business Impact</td><td style="padding:10px 14px; color:#6B7280;"></td></tr>'
         '<tr><td style="padding:10px 14px; color:#374151; font-weight:500;">Remediation Plan</td><td style="padding:10px 14px; color:#6B7280;"></td></tr>'
