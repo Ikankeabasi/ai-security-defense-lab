@@ -54,8 +54,8 @@ https://github.com/AibinuolaDamilola/ai-security-defense-lab/commit/ac71117800da
 **Skills:** AI model supply chain security · Picklescan · safetensors · MITRE ATLAS AML.T0010 · Static malware analysis · CI/CD security gates.
 
 **Others:**
-- [Technical write-up link]
-- [LinkedIn post link]
+- Technical write-up link: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-6/week-6-model-security-assessment..pdf
+- LinkedIn post link: https://www.linkedin.com/posts/ikanke-asuquo-7825623b4_aisecurity-cybersecurity-mlsecurity-share-7495198753507840000-Vjl3/
 
 ---
 
