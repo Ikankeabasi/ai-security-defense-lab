@@ -43,15 +43,15 @@ https://github.com/AibinuolaDamilola/ai-security-defense-lab/commit/ac71117800da
 
 ## Level 2 — DataForge ML · AI Model Security
 
-**Problem:**
+**Problem:** DataForge ML’s model loader downloaded AI model weights from the unverified Hugging Face account logix-community in legacy pickle format without running integrity verification before loading the model.
 
-**Method:**
+**Method:** Audited model_loader.py and identified unsafe pickle.load() usage, lack of model integrity verification, an unverified model source, missing checksum, missing model card, unknown licence, and use of the legacy .pkl format. Ran Picklescan against the model fixture and mapped the incident to MITRE ATLAS AML.T0010 — ML Supply Chain Compromise.
 
-**Evidence:** [Link to commit]
+**Evidence:**  https://github.com/Ikankeabasi/ai-security-defense-lab/commit/b85b96cb428457f5d5f2c45deade0e97076084de
 
-**Outcome:**
+**Outcome:** The inference pipeline was hardened by replacing unsafe pickle loading with safetensors, adding a mandatory Picklescan pre-load security gate, and changing the model source to a verified repository placeholder.
 
-**Skills:** Model Supply Chain Verification · Pickle Exploit Detection · Safetensors · Automated Model Scanning
+**Skills:** AI model supply chain security · Picklescan · safetensors · MITRE ATLAS AML.T0010 · Static malware analysis · CI/CD security gates.
 
 **Others:**
 - [Technical write-up link]
