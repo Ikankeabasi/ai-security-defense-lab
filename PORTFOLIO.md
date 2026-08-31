@@ -20,7 +20,7 @@ Fill in each section as you complete a level. Link directly to your commit diff 
 
 **Method:** Investigated AWS CloudTrail logs using the 5Ws (Who, What, When, Where, and How) to identify Indicators of Compromise (IoCs). Removed hardcoded credentials by replacing them with environment variables, protected secrets using a .gitignore file, and replaced the wildcard IAM policy with a least-privilege policy that grants only the permissions required by the application.
 
-**Evidence:** https://github.com/AibinuolaDamilola/ai-security-defense-lab/commit/ac71117800dadb318df892b39b66ed0b4a9d93d6
+**Evidence:** https://github.com/AibinuolaDamilola/ai-security-defense-lab/commit/120e27b527582b45a53ee62a4b4e0a01f48e0033
 
 **Outcome:** The application no longer exposes sensitive credentials in source code, secrets are excluded from version control, and IAM permissions are restricted to only the required resources and actions. These changes reduce the attack surface and limit the impact of future credential compromise.
 
@@ -72,7 +72,7 @@ https://github.com/AibinuolaDamilola/ai-security-defense-lab/commit/ac71117800da
 **Skills:** API security · OWASP API Top 10 (BOLA) · MITRE ATLAS AML.T0051 (Indirect Prompt Injection) · MITRE ATLAS AML.T0054 (LLM Data Exfiltration) · JWT authentication · Rate limiting / Denial of Wallet mitigation · Semgrep static analysis · Defence-in-depth architecture
 
 **Others:**
-- [Technical write-up link]
+- https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-8/week-8-ai-application-security-report.md
 - [LinkedIn post link]
 
 ---
