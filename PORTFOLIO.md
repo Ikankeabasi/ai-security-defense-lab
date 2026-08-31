@@ -61,15 +61,15 @@ https://github.com/AibinuolaDamilola/ai-security-defense-lab/commit/ac71117800da
 
 ## Level 3 — CartBot AI · Application & API Security
 
-**Problem:**
+**Problem:** CartBot AI’s customer-facing API trusted a client-supplied `customer_id` header with no cryptographic verification.
 
-**Method:**
+**Method:** Audited `api_config.py` and identified `TRUST_CUSTOMER_ID_HEADER = True`, `REQUIRE_JWT_VALIDATION = False`, and `RATE_LIMIT_ENABLED = False`. Queried the CartBot AI assistant to trigger the indirect prompt injection, demonstrated BOLA by accessing another customer’s orders, ran the Bulk Harvest simulation, and used Semgrep to identify the vulnerable patterns.
 
-**Evidence:** [Link to commit]
+**Evidence:** https://github.com/Ikankeabasi/ai-security-defense-lab/commit/120e27b527582b45a53ee62a4b4e0a01f48e0033
 
-**Outcome:**
+**Outcome:** The API can no longer be BOLA’d via header spoofing — JWT validation verifies the requester and requested customer ID, rate limiting is enabled, and the system prompt restricts customer-data retrieval while treating product content as untrusted data.
 
-**Skills:** AI API Hardening · Rate Limiting · Output Filtering · OWASP LLM Top 10 · Direct Prompt Injection Defence
+**Skills:** API security · OWASP API Top 10 (BOLA) · MITRE ATLAS AML.T0051 (Indirect Prompt Injection) · MITRE ATLAS AML.T0054 (LLM Data Exfiltration) · JWT authentication · Rate limiting / Denial of Wallet mitigation · Semgrep static analysis · Defence-in-depth architecture
 
 **Others:**
 - [Technical write-up link]
