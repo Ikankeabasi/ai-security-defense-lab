@@ -72,8 +72,10 @@ https://github.com/AibinuolaDamilola/ai-security-defense-lab/commit/ac71117800da
 **Skills:** API security · OWASP API Top 10 (BOLA) · MITRE ATLAS AML.T0051 (Indirect Prompt Injection) · MITRE ATLAS AML.T0054 (LLM Data Exfiltration) · JWT authentication · Rate limiting / Denial of Wallet mitigation · Semgrep static analysis · Defence-in-depth architecture
 
 **Others:**
-- https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-8/week-8-ai-application-security-report.md
-- [LinkedIn post link]
+- ### AI Application Security Report:
+  https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-8/week-8-ai-application-security-report.md
+- ### LinkedIn post link:
+  https://lnkd.in/p/eDBKUKtz
 
 ---
 
