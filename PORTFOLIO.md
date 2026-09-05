@@ -4,7 +4,9 @@
 
 **GitHub:** https://github.com/Ikankeabasi
 
-**Completed:** 31/07/2026
+**Hugging Face Space:** [My HF Space URL] 
+
+**Completed:** 01/09/2026
 
 ---
 
@@ -150,8 +152,8 @@ API Security · OWASP API Top 10 · Broken Object Level Authorization (BOLA) · 
 
 ### Supporting Artifacts
 - AI Application Security Report: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-8/week-8-ai-application-security-report.md
-- Week 8 portfolio evidence: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio/tree/main/week-8/
-- Threat model: [Add your threat model diagram/link here]
+- Week 8 portfolio evidence: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./tree/main/week-8
+- Threat model: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-8/api-security-threat-model.md
 
 ### LinkedIn Case Study
 https://lnkd.in/p/eDBKUKtz
