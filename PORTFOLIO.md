@@ -4,8 +4,6 @@
 
 **GitHub:** https://github.com/Ikankeabasi
 
-**Hugging Face Space:** https://ai-security-defense-lab-amblessed.streamlit.app/
-
 **Completed:** 31/07/2026
 
 ---
