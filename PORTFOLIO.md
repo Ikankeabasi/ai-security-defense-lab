@@ -162,19 +162,42 @@ https://lnkd.in/p/eDBKUKtz
 
 ## Level 4 — PayGuard · Data Security in AI
 
+**Date:** 24/09/2026
+
 **Problem:**
+
+PayGuard's RAG system had weaknesses around tenant isolation, vector-store access, embedding exposure, fine-tuning data integrity, and query control. The RAG layer trusted the client-supplied `tenant_id`, the vector store used a shared index without enforced tenant filtering, the fine-tuning pipeline accepted training data without integrity validation, and retrieval had no effective rate limit.
+
+I also assessed the security impact of embedding inversion and the fine-tuning backdoor demonstrated in the lab. These weaknesses created a path to cross-tenant data exposure, poisoned model behaviour, and increased inference/resource costs.
 
 **Method:**
 
-**Evidence:** [Link to commit]
+I inspected the PayGuard RAG configuration and embedding model source, triggered cross-tenant retrieval by spoofing the `tenant_id` field, ran the scale demonstration, and simulated embedding inversion on a leaked record.
+
+I then inspected the Airflow fine-tuning pipeline, triggered the poisoned model behaviour, ran Semgrep against the PayGuard fixtures, and documented the findings using the STRIDE threat model.
+
+For remediation, I moved tenant enforcement to the database/vector-store layer, strengthened fine-tuning data validation, protected the retrieval boundary, and verified the security changes against the Level 4 requirements.
+
+**Evidence:**
+
+- Level 4 remediation commit: https://github.com/Ikankeabasi/ai-security-defense-lab/commit/4c2dfc5a606a6d81c7f43d8f0c21fe01f2705f60
+- Level 4 STRIDE findings: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-11/week-11-level-4-data-security-findings.md
+- Level 4 lab: https://github.com/Ikankeabasi/ai-security-defense-lab/blob/main/levels/level4_payguard.py
 
 **Outcome:**
 
-**Skills:** STRIDE Threat Modeling · RAG Pipeline Security · Multi-Tenant Data Isolation · Indirect Prompt Injection Defence
+Cross-tenant retrieval is no longer possible at the application layer or the database layer — even a future code change that forgets to check `tenant_id` cannot bypass the database-level tenant boundary.
+
+The remediation also strengthens fine-tuning data validation and the retrieval security controls, reducing the risk of tenant-data exposure, poisoned model behaviour, and uncontrolled query abuse.
+
+**Skills:**
+
+RAG Security · Vector Database Access Control · OWASP LLM Top 10 (LLM09, LLM05) · STRIDE Threat Modeling · Airflow Pipeline Security · Database-Level Authorization Design · Semgrep Static Analysis · Multi-Tenant Data Isolation · Embedding Security · Data and Model Poisoning
 
 **Others:**
 - [Technical write-up link]
 - [LinkedIn post link]
+- [Any additional evidence/screenshot link]
 
 ---
 
