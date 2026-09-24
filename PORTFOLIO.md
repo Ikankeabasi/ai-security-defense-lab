@@ -6,7 +6,7 @@
 
 **Hugging Face Space:** [My HF Space URL] 
 
-**Completed:** 01/09/2026
+**Completed:** 24/09/2026
 
 ---
 
@@ -162,8 +162,6 @@ https://lnkd.in/p/eDBKUKtz
 
 ## Level 4 — PayGuard · Data Security in AI
 
-**Date:** 24/09/2026
-
 **Problem:**
 
 PayGuard's RAG system had weaknesses around tenant isolation, vector-store access, embedding exposure, fine-tuning data integrity, and query control. The RAG layer trusted the client-supplied `tenant_id`, the vector store used a shared index without enforced tenant filtering, the fine-tuning pipeline accepted training data without integrity validation, and retrieval had no effective rate limit.
@@ -192,7 +190,7 @@ The remediation also strengthens fine-tuning data validation and the retrieval s
 
 **Skills:**
 
-RAG Security · Vector Database Access Control · OWASP LLM Top 10 (LLM09, LLM05) · STRIDE Threat Modeling · Airflow Pipeline Security · Database-Level Authorization Design · Semgrep Static Analysis · Multi-Tenant Data Isolation · Embedding Security · Data and Model Poisoning
+RAG Security · Vector Database Access Control · OWASP LLM Top 10 (LLM09, LLM05) · STRIDE Threat Modeling · Airflow Pipeline Security · Database-Level Authorization Design · Semgrep Static Analysis.
 
 **Others:**
 - [Technical write-up link]
