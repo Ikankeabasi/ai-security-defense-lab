@@ -178,7 +178,7 @@ For remediation, I moved tenant enforcement to the database/vector-store layer, 
 
 **Evidence:**
 
-- Level 4 remediation commit: https://github.com/Ikankeabasi/ai-security-defense-lab/commit/4c2dfc5a606a6d81c7f43d8f0c21fe01f2705f60
+- Level 4 remediation commit:[ https://github.com/Ikankeabasi/ai-security-defense-lab/commit/4c2dfc5a606a6d81c7f43d8f0c21fe01f2705f60](https://github.com/Ikankeabasi/ai-security-defense-lab/commit/f141340cb548ab9d1d21ce2b536094d84fa5366a)
 - Level 4 STRIDE findings: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-11/week-11-level-4-data-security-findings.md
 - Level 4 lab: https://github.com/Ikankeabasi/ai-security-defense-lab/blob/main/levels/level4_payguard.py
 
