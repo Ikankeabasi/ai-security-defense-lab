@@ -193,7 +193,7 @@ The remediation also strengthens fine-tuning data validation and the retrieval s
 RAG Security · Vector Database Access Control · OWASP LLM Top 10 (LLM09, LLM05) · STRIDE Threat Modeling · Airflow Pipeline Security · Database-Level Authorization Design · Semgrep Static Analysis.
 
 **Others:**
-- [Technical write-up link]
+- Level 4 Technical Report link: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-11/week-11-level-4-data-security-report.md
 - LinkedIn post link: https://lnkd.in/p/dQsXSjmJ 
 
 
