@@ -291,19 +291,29 @@ def render_level5(user, supabase_client):
 
     st.markdown("#### MAESTRO Threat Model")
     st.caption("All seven layers. Some will correctly come back 'not applicable to this incident' — that's part of the exercise.")
-    maestro_layers = ["L1 — Foundation Models", "L2 — Data Operations", "L3 — Agent Frameworks", "L4 — Deployment & Infrastructure", "L5 — Evaluation & Observability", "L6 — Security & Compliance", "L7 — Agent Ecosystem"]
-    rows_html = "".join(f'<tr style="border-bottom:1px solid #F1F5F9;"><td style="padding:10px 14px;color:#374151;font-weight:500;">{layer}</td><td style="padding:10px 14px;color:#6B7280;"></td></tr>' for layer in maestro_layers)
+    maestro_rows = [
+        ("L1 — Foundation Models", "The agent may interpret an instruction embedded in a citizen comment as an authoritative directive instead of treating it as untrusted case content. This creates the goal-hijack risk described in the scenario."),
+        ("L2 — Data Operations", "Not applicable to this incident based on the available investigation. The scenario does not identify a separate data-pipeline issue."),
+        ("L3 — Agent Frameworks", "The agent can turn a hijacked goal into a tool action because the vulnerable configuration allows dismissal and does not require human approval. The action workflow lacks an effective authorization checkpoint before the sensitive operation."),
+        ("L4 — Deployment &amp; Infrastructure", "The standing dismissal permission is present in the supplied agent configuration. The available evidence identifies an application-level permission problem; it does not establish a separate infrastructure compromise."),
+        ("L5 — Evaluation &amp; Observability", "`LOG_AGENT_ACTIONS = False` means the vulnerable configuration does not enable the intended agent-action logging. Without an audit trail, it is harder to identify what happened and investigate or attribute the action."),
+        ("L6 — Security &amp; Compliance", "The vulnerable setup lacks a mandatory human-approval checkpoint for a sensitive case disposition. The organization should define and enforce a policy for which actions an agent may take independently and which require human authorization."),
+        ("L7 — Agent Ecosystem", "Not applicable to this incident based on the available investigation. The scenario concerns one agent and does not describe interactions among multiple agents."),
+        ("OWASP Classification", "**ASI01 — Agent Goal Hijack:** the citizen comment attempts to redirect the agent. **ASI02 — Tool Misuse &amp; Exploitation:** the agent may use its case-finalization capability in an unsafe or unauthorized way. **ASI03 — Identity &amp; Privilege Abuse:** standing dismissal authority gives the agent more power than its ordinary support role requires."),
+        ("Business Impact", "A case could be dismissed without proper review, leading to an incorrect municipal decision and reduced accountability. Missing action logs could make the incident harder to investigate and could damage public trust. These are potential impacts of the simulated scenario, not claims that a real case was dismissed."),
+        ("Root Cause", "The primary root cause is excessive standing authority combined with the absence of a mandatory human-approval gate. Sanitizing citizen input helps reduce goal-hijack risk, and audit logging supports investigation, but neither replaces the authorization boundary. Removing the agent's standing dismissal authority is the key containment control: even if its goal is hijacked, it should not be able to finalize a dismissal on its own."),
+        ("Remediation", "Set `CAN_FINALIZE_DISMISSAL = False`, set `REQUIRE_HUMAN_APPROVAL = True`, set `SANITIZE_CITIZEN_INPUT = True`, and set `LOG_AGENT_ACTIONS = True`. Route requested case dispositions to human review and enforce authorization in the action path. Run the prescribed before-and-after test script and Semgrep scan, and retain screenshots of the actual results as evidence."),
+    ]
+    rows_html = "".join(
+        f'<tr style="border-bottom:1px solid #F1F5F9;"><td style="padding:10px 14px;color:#374151;font-weight:500;">{layer}</td><td style="padding:10px 14px;color:#6B7280;">{finding}</td></tr>'
+        for layer, finding in maestro_rows
+    )
     st.markdown(
         '<div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:8px;padding:20px;margin-top:12px;">' +
         '<div style="font-size:13px;font-weight:600;color:#1E293B;margin-bottom:16px;">LegalBot Municipal — MAESTRO Threat Model</div>' +
         '<table style="width:100%;border-collapse:collapse;font-size:13px;">' +
         '<thead><tr style="background:#F1F5F9;"><th style="padding:10px 14px;text-align:left;color:#64748B;border-bottom:1px solid #E2E8F0;width:32%;">MAESTRO Layer</th><th style="padding:10px 14px;text-align:left;color:#64748B;border-bottom:1px solid #E2E8F0;">Your Finding</th></tr></thead>' +
-        f'<tbody>{rows_html}' +
-        '<tr style="border-bottom:1px solid #F1F5F9;"><td style="padding:10px 14px;color:#374151;font-weight:500;">OWASP Classification</td><td style="padding:10px 14px;color:#6B7280;"></td></tr>' +
-        '<tr style="border-bottom:1px solid #F1F5F9;"><td style="padding:10px 14px;color:#374151;font-weight:500;">Business Impact</td><td style="padding:10px 14px;color:#6B7280;"></td></tr>' +
-        '<tr style="border-bottom:1px solid #F1F5F9;"><td style="padding:10px 14px;color:#374151;font-weight:500;">Root Cause</td><td style="padding:10px 14px;color:#6B7280;"></td></tr>' +
-        '<tr><td style="padding:10px 14px;color:#374151;font-weight:500;">Remediation</td><td style="padding:10px 14px;color:#6B7280;"></td></tr>' +
-        '</tbody></table>' +
+        f'<tbody>{rows_html}</tbody></table>' +
         '<div style="margin-top:12px;font-size:11px;color:#94A3B8;">Complete this alongside your NIST AI RMF mapping in a Google Doc, GitHub Gist, or Markdown file. Paste the link when submitting.</div></div>',
         unsafe_allow_html=True,
     )
