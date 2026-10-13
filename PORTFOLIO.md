@@ -203,14 +203,42 @@ RAG Security · Vector Database Access Control · OWASP LLM Top 10 (LLM09, LLM05
 
 **Problem:**
 
+LegalBot Municipal, a simulated municipal AI legal assistant, could be redirected by a malicious instruction hidden in a citizen's case comment. The vulnerable setup gave the agent standing permission to finalize dismissals, did not require human approval, did not separate citizen input from instructions, and did not enable agent-action logging. If the instruction hijacked the agent's goal, the agent could attempt an unauthorized case dismissal without a proper human checkpoint or a reliable audit trail.
+
+The main issue was excessive agency: the agent had more authority than it needed for its normal support role. The exercise maps to OWASP Agentic Top 10 risks ASI01 (Agent Goal Hijack), ASI02 (Tool Misuse & Exploitation), and ASI03 (Identity & Privilege Abuse). This was a simulated lab scenario, not a claim that a real municipal case was dismissed.
+
 **Method:**
 
-**Evidence:** [Link to commit]
+I inspected the LegalBot configuration and the Level 5 scenario, then examined how an instruction embedded in a citizen comment could influence the agent's goal and reach a sensitive tool action. I documented the risks using the MAESTRO threat model and mapped the governance requirements to the four NIST AI RMF functions: Govern, Map, Measure, and Manage.
+
+For remediation, I changed the lab's security status to `PATCHED`, removed standing dismissal authority, required human approval for requested case dispositions, enabled sanitization of citizen input as untrusted data, and enabled action logging. The key control is Least Agency: even if an untrusted instruction reaches the agent, it should not have the authority to finalize the case on its own. I also updated the Level 5 MAESTRO and NIST AI RMF tables and prepared a technical findings report. Test and scanner results should be treated as verified only where supporting evidence is available.
+
+**Evidence:**
+
+- [Level 5 lab code](https://github.com/Ikankeabasi/ai-security-defense-lab/blob/main/levels/level5_legalbot.py)
+- [Hardened LegalBot configuration](https://github.com/Ikankeabasi/ai-security-defense-lab/blob/main/fixtures/level5_legalbot/agent_config.py)
+- Key Level 5 commits:
+  - [Patch Level 5 governance controls and set status to PATCHED](https://github.com/Ikankeabasi/ai-security-defense-lab/commit/43c0915620a7b236125ad2c476c567b79ba9b418)
+  - [Complete the NIST AI RMF mapping](https://github.com/Ikankeabasi/ai-security-defense-lab/commit/8967d76ad1f8b7a602e109e94182d30011958538)
+  - [Fill the MAESTRO threat model table](https://github.com/Ikankeabasi/ai-security-defense-lab/commit/2ef3cc72b98025421f68b27cd20635e0ce3e0394)
+  - [Polish MAESTRO table formatting](https://github.com/Ikankeabasi/ai-security-defense-lab/commit/b11b16e8e7a195156605d8c385061b365a5d8902)
+  - [Add the human-approval queue function to the fixture](https://github.com/Ikankeabasi/ai-security-defense-lab/commit/17c5d0d471e1cc6ea2380615c747c06e08abe7df)
+  - [Require human approval in the fixture configuration](https://github.com/Ikankeabasi/ai-security-defense-lab/commit/cde7302743eb34fc39a769c03de8a6190af2d3b1)
+  - [Complete the hardened fixture configuration and action-handling example](https://github.com/Ikankeabasi/ai-security-defense-lab/commit/3e0c5e0dc2a0db3e2231b8b7f77dd01879942cbc)
+- [Level 5 commit history — lab interface and threat-model changes](https://github.com/Ikankeabasi/ai-security-defense-lab/commits/main/levels/level5_legalbot.py)
+- [Level 5 commit history — agent configuration changes](https://github.com/Ikankeabasi/ai-security-defense-lab/commits/main/fixtures/level5_legalbot/agent_config.py)
 
 **Outcome:**
+
+I documented the Level 5 agent-governance risk and updated the lab to demonstrate a safer design. The agent no longer has standing dismissal authority in the hardened configuration; requested case dispositions are routed for human review, citizen comments are handled as untrusted data, and action logging is enabled. The MAESTRO and NIST AI RMF mappings explain the technical risks and the governance actions needed to manage them.
+
+The main lesson is that input sanitization and guardrails are useful layers, but they cannot replace authorization boundaries. Removing unnecessary standing authority and requiring human approval for sensitive actions reduces the chance that a goal hijack becomes an irreversible action.
 
 **Skills:** Excessive Agency Mitigation · Llama Guard Integration · Pydantic Schema Enforcement · Autonomous Agent Containment
 
 **Others:**
-- [Technical write-up link]
-- [LinkedIn post link]
+- Level 5 Agent Governance Findings Report (Week 13): https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-13/agent-governance-findings-report.md
+- Week 12 Autonomous Agent Risk Matrix: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-12/Autonomous_Agent_Risk_Matrix.pdf
+- Level 5 MAESTRO Threat Model: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-13/level-5-maestro-threat-model.md
+- Level 5 NIST AI RMF Mapping: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-13/nist-ai-rmf-mapping.md
+- LinkedIn post link: [Add after publishing]
