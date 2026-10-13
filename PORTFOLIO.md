@@ -234,4 +234,4 @@ The main lesson is that input sanitization and guardrails are useful layers, but
 - Autonomous Agent Risk Matrix: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-12/Autonomous_Agent_Risk_Matrix.pdf
 - Level 5 MAESTRO Threat Model: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-13/level-5-maestro-threat-model.md
 - Level 5 NIST AI RMF Mapping: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-13/nist-ai-rmf-mapping.md
-- LinkedIn post link: 
+- LinkedIn post link: https://lnkd.in/p/dPT753me
