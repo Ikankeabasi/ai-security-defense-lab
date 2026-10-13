@@ -9,8 +9,8 @@ from datetime import datetime
 # AGENT PERMISSIONS
 # LegalBot was granted standing finalize/dismiss authority during rollout
 # to reduce case backlog. No approval gate was added afterward.
-CAN_FINALIZE_DISMISSAL = True
-REQUIRE_HUMAN_APPROVAL = False
+CAN_FINALIZE_DISMISSAL = False
+REQUIRE_HUMAN_APPROVAL = True
 
 # INPUT HANDLING
 # Citizen comments are passed directly into the agent's context window
