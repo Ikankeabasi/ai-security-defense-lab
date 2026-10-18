@@ -23,7 +23,7 @@ An attacker who obtained the credentials could potentially access cloud resource
 ### Evidence
 - CloudTrail investigation and IoC analysis
 - Incident Timeline Report: https://github.com/Ikankeabasi/ai-security-defense-lab/blob/main/Incident-Timeline-Report-Level-1.md
-- Supporting implementation/commit evidence: https://github.com/AibinuolaDamilola/ai-security-defense-lab/commit/ac71117800dadb318df892b39b66ed0b4a9d93d6
+- Supporting implementation/commit evidence: https://github.com/Ikankeabasi/ai-security-defense-lab/commit/ac71117800dadb318df892b39b66ed0b4a9d93d6
 
 ### Remediation
 I removed hardcoded credentials and replaced them with environment variables, protected secrets from version control using .gitignore, and replaced wildcard Administrator-style IAM permissions with a least-privilege policy that grants only the permissions required by the application.
@@ -31,7 +31,7 @@ I removed hardcoded credentials and replaced them with environment variables, pr
 These changes address both the secret-exposure risk and the excessive-permission risk by reducing what an attacker could obtain and do if credentials were compromised.
 
 ### Commit
-https://github.com/AibinuolaDamilola/ai-security-defense-lab/commit/ac71117800dadb318df892b39b66ed0b4a9d93d6
+https://github.com/Ikankeabasi/ai-security-defense-lab/commit/ac71117800dadb318df892b39b66ed0b4a9d93d6
 
 ### Outcome
 The application no longer exposes sensitive credentials in source code, secrets are excluded from version control, and IAM permissions are restricted to the required resources and actions.
