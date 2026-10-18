@@ -23,6 +23,7 @@ An attacker who obtained the credentials could potentially access cloud resource
 ### Evidence
 - CloudTrail investigation and IoC analysis
 - Incident Timeline Report: https://github.com/Ikankeabasi/ai-security-defense-lab/blob/main/Incident-Timeline-Report-Level-1.md
+- Incident Timeline Report  Summary: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-4/Incident-timeline.md
 - Supporting implementation/commit evidence: https://github.com/Ikankeabasi/ai-security-defense-lab/commit/ac71117800dadb318df892b39b66ed0b4a9d93d6
 
 ### Remediation
